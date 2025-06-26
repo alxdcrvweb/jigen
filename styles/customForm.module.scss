@@ -1,0 +1,231 @@
+@use "sass:math";
+@import "keyframes";
+@import "mixins";
+@import "variables";
+
+.select {
+    min-width: 360px;
+    position: relative;
+    // .select__current
+    &__current {
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+        background: #1A3E6F;
+        border-radius: 12px;
+        padding: 10px 16px;
+        line-height: 130%;
+        min-height: 64px;
+        display: flex;
+        align-items: center;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            width: 10px;
+            height: 1px;
+            top: calc(50% - 0.5px);
+            right: 16px;
+            background: #fff;
+            transform-origin: center;
+            transition: rotate 0.3s ease 0s;
+        }
+
+        &:before {
+            rotate: -45deg;
+        }
+
+        &:after {
+            rotate: 45deg;
+            translate: calc(-50% - 1.5px);
+        }
+
+        &._active {
+            &:before {
+                rotate: 45deg;
+            }
+
+            &:after {
+                rotate: -45deg;
+            }
+        }
+    }
+
+    // .select__dropdown
+    &__dropdown {
+        position: absolute;
+        top: calc(100% + 6px);
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        background: #1A3E6F;
+        border-radius: 8px;
+        max-height: 220px;
+        overflow-x: hidden;
+        width: 100%;
+        min-width: max-content;
+        padding: 10px 0;
+        translate: 0 -20px;
+        opacity: 0;
+        transition: opacity 0.5s ease 0s, translate 0.5s ease 0s;
+        //.select__dropdown_open
+        &_open {
+            translate: 0;
+            opacity: 1;
+        }
+    }
+
+    //.select__label
+    &__label {
+        cursor: pointer;
+
+        font-family: 'Arial';
+        letter-spacing: 0.04em;
+        padding: 10px 16px;
+
+        > input {
+            width: 0;
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &._active {
+            background: #22508E;
+        }
+
+        @media (any-hover: hover) {
+            &:hover:not(._active) {
+                background: #132D51;
+            }
+        }
+    }
+}
+
+.checkbox {
+    align-self: center;
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    border-radius: 12px;
+    overflow: hidden;
+
+    > input {
+        flex: 0 0 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    > span {
+        flex: 0 0 64px;
+        height: 64px;
+        cursor: pointer;
+        padding: 15px;
+        background: #1A3E6F;
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &:active,
+    &._active {
+        > span {
+            background: #4595F7;
+        }
+    }
+}
+
+.checkboxWithLabel {
+    flex: 0 0 auto;
+    cursor: pointer;
+    display: flex;
+    column-gap: 12px;
+    align-items: center;
+
+    @media (max-width: ($md3 + px)) {
+        align-items: flex-start;
+
+    }
+
+    & > input {
+        flex: 0 0 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &:active,
+    &._active {
+        .checkboxWithLabel__checkbox {
+            background: rgba(236, 236, 236, 0.3);
+        }
+
+        .checkboxWithLabel__checkbox:before {
+            background: #4FC4AE;
+        }
+    }
+
+    @media (any-hover: hover) {
+        .checkboxWithLabel__checkbox {
+            transition: background 0.5s ease 0s;
+        }
+        &:hover:not(._active,:active,._disabled) {
+            .checkboxWithLabel__checkbox {
+                background: rgba(236, 236, 236, 0.2);
+            }
+        }
+    }
+
+    //.checkboxWithLabel__checkbox
+    &__checkbox {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 0 0 24px;
+        width: 24px;
+        height: 24px;
+
+        padding: 15px;
+        overflow: hidden;
+
+        background: rgba(236, 236, 236, 0.1);
+        backdrop-filter: blur(40px);
+        border-radius: 8px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            background: transparent;
+            border-radius: 50%;
+        }
+
+        @media (max-width: ($md3 +px)) {
+
+            margin-top: 3px;
+        }
+    }
+
+    //.checkboxWithLabel__label
+    &__label {
+        color: #fff;
+        flex: 0 1 auto;
+        line-height: 160%;
+        @media (max-width: ($md3 + px)) {
+            text-align: right;
+        }
+    }
+}

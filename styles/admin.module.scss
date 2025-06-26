@@ -1,0 +1,58 @@
+@use "sass:math";
+@import "keyframes";
+@import "mixins";
+@import "variables";
+
+
+.admin {
+    @include adaptiv-value("padding-top", 64, 24, 1);
+    @include adaptiv-value("padding-bottom", 64, 24, 1);
+
+    & h1 {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    //.admin__row
+    &__row {
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+    }
+
+    //.admin__addresses
+    &__addresses {
+
+    }
+
+    //.admin__label
+    &__label {
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+
+    //.admin__btns
+    &__btns {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+    }
+
+    //.admin__actions
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+    }
+}

@@ -1,0 +1,90 @@
+@use "sass:math";
+@import "keyframes";
+@import "mixins";
+@import "variables";
+
+
+.shipping {
+    &__header {
+        //@include adaptiv-value("padding-top", 40, 32, 1);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        margin-top: 40px;
+
+        @media (min-width: ($md3 + px)) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    &__personality {
+        margin-top: 40px;
+        & > h1 {
+            font-size: 16px;
+        }
+        & > input, select {
+            font-size: 16px;
+            height: 56px;
+            margin-top: 24px;
+            padding-left: 20px;
+            color: white;
+            margin-right: 32px;
+            width: 312px;
+            padding-right: 20px;
+            background: rgba(236, 236, 236, 0.1);
+            backdrop-filter: blur(40px);
+            border-radius: 100px;      
+            & > option {
+                color: black
+            }
+            @media (max-width: 450px) {
+                width: 100%;
+                margin-right: 0px;
+            }
+        }
+
+    }
+    &__location {
+        margin-bottom: 40px;
+    }
+    &__phoneInput {
+        & > div {
+            display: none!important;
+        }
+        margin-top: 24px!important;
+        & > input {
+            font-size: 16px;
+            height: 56px!important;
+            border: 0px!important;
+            padding-left: 20px;
+            color: white!important;
+            margin-right: 32px;
+            width: 312px!important;
+            padding-right: 20px;
+            background: #252525!important;
+            backdrop-filter: blur(40px);
+            border-radius: 100px!important;
+            @media (max-width: 450px) {
+                width: 100%!important;
+                margin-right: 0px;
+            }
+        }
+    }
+    &__button {
+        width: 312px;
+        margin-bottom: 50px;
+        margin-left:60px;
+        @media (max-width: 900px) {
+            width: calc(100% - 40px);
+            margin-left:20px;
+            margin-right: 20px;
+        }
+        @media (max-width: 450px) {
+            width: calc(100% - 40px);
+            margin-left:20px;
+            margin-right: 20px;
+        }
+    }
+}

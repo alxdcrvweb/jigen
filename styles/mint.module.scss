@@ -1,0 +1,169 @@
+.mint__container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+}
+.mint__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    margin-left: 20px;
+    max-width: 1140px;
+    margin-right: 20px;
+    @media (max-width:994px) {
+        height: 100%;
+        flex-direction: column-reverse;
+        margin-top: 20px;
+    }
+}
+.collection {
+    @media (max-width:994px) {
+        width: 90vw;
+        margin-top: 50px;
+    }
+    .row {
+        font-size: 18px;
+        font-family: 'Integral CF';
+        line-height: 160%;
+        display: flex;
+        align-items: center;
+        padding-top: 32px;
+        color: #ECECEC;
+        padding-bottom: 32px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        .symbol {
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+            width: 48px;
+            background: linear-gradient(104.82deg, rgba(255, 255, 255, 0.05) -95.95%, rgba(255, 255, 255, 0) 150.56%);
+            backdrop-filter: blur(32px);
+        }
+        span {
+            color: #4FC4AE;
+            margin-left: 10px;
+        }
+    }
+}
+.mint_nft {
+    display: flex;
+    flex-direction: column;
+    padding:24px;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(104.82deg, rgba(255, 255, 255, 0.1) -95.95%, rgba(255, 255, 255, 0) 150.56%);
+    backdrop-filter: blur(40px);
+    border-radius: 8px;
+    height: 318px;
+    width: 560px;
+    min-width: 0;
+    @media (max-width:994px) {
+        width: 90vw;
+        height: 468px;
+        margin-top: 70px;
+    }
+}
+.counter {
+    height: 101px;
+    padding:24px;
+    font-family: 'Integral CF';
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    justify-content: space-between;
+    color: #FFFFFF;
+    width: 100%;
+    background: linear-gradient(104.82deg, rgba(255, 255, 255, 0.1) -95.95%, rgba(255, 255, 255, 0) 150.56%);
+    border-radius: 8px;
+    @media (max-width:994px) {
+        height: 110px;
+    }
+    .line {
+        width: 100%;
+        height: 16px;
+        overflow: hidden;
+        background: rgba(236, 236, 236, 0.1);
+        border-radius: 63px;
+        .line_full {
+            height: 100%;
+            border-radius: 63px;
+            background: #4FC4AE;
+        }
+    }
+    
+}
+.mint_button {
+    width: 100%;
+    margin-top: 24px;
+}
+.mint_title {
+    margin-bottom: 20px;
+    margin-top: -10px;
+}
+.change_mint {
+    height: 86px;
+    width: 100%;
+    margin-top: 24px;
+    font-family: 'Integral CF';
+    font-size: 18px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding:24px;
+    background: linear-gradient(104.82deg, rgba(255, 255, 255, 0.1) -95.95%, rgba(255, 255, 255, 0) 150.56%);
+    border-radius: 8px;
+    @media (max-width:994px) {
+        padding:8px;
+        height: 130px;
+        .change_text{
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    }
+    .max {
+        button {
+            background: linear-gradient(104.82deg, rgba(255, 255, 255, 0.1) -95.95%, rgba(255, 255, 255, 0) 150.56%);
+            border-radius: 8px;
+            font-family: 'Integral CF';
+            font-size: 18px;
+            color: #FFFFFF;
+            display: flex;
+            justify-content: space-around;
+            padding: 5px;
+            width: 102px;
+            height: 38px;
+            img {
+                padding-top: 5px;
+            }
+        } 
+    }
+    .count {
+        font-family: 'Integral CF';
+        font-size: 18px;
+        color: #FFFFFF;
+        button {
+            font-family: 'Integral CF';
+            font-size: 18px;
+            color: #FFFFFF;
+            background: linear-gradient(104.82deg, rgba(255, 255, 255, 0.1) -95.95%, rgba(255, 255, 255, 0) 150.56%);
+            border-radius: 8px;
+            width: 38px;
+            height: 38px;
+            margin-left: 20px;
+            margin-right: 20px;
+            @media (max-width:994px) {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+    }
+}

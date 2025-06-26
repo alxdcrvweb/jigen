@@ -1,0 +1,213 @@
+@use "sass:math";
+@import "keyframes";
+@import "mixins";
+@import "variables";
+
+
+.rewards {
+    @include adaptiv-value("padding-top", 40, 32, 1);
+    padding-bottom: 50px;
+    // .rewards__content
+    &__content {
+    }
+
+    // .rewards__header
+    &__header {
+        //@include adaptiv-value("padding-top", 40, 32, 1);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+
+        &:not(:last-child) {
+            @include adaptiv-value("margin-bottom", 40, 24, 1);
+        }
+
+        @media (min-width: ($md3 + px)) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    // .rewards__title
+    &__title {
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    // .rewards__coming
+    &__coming {
+        display: flex;
+        flex-direction: column;
+        @media (max-width: ($md3 + px)) {
+            padding: 12px;
+            border: 1px solid rgba(236, 236, 236, 0.1);
+            border-radius: 8px;
+        }
+
+        & > b {
+            color: #fff;
+
+            &:not(:last-child) {
+                @include adaptiv-value("margin-bottom", 8, 4, 1);
+            }
+        }
+
+        & > span {
+            color: #A7A7A7;
+        }
+    }
+
+    // .rewards__main
+    &__main {
+        position: relative;
+    }
+
+    // .rewards__body
+    &__body {
+        display: grid;
+        align-items: start;
+        justify-content: center;
+        gap: 32px;
+        grid-template-columns: repeat(auto-fill, 312px);
+        @media (max-width: ($md3 + px)) {
+            grid-template-columns: 320px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 40px;
+
+            @media (max-width: ($md3 + px)) {
+                margin-bottom: 64px;
+            }
+        }
+    }
+}
+
+.rewardsCard {
+    position: relative;
+    overflow: hidden;
+    padding: 16px;
+
+    background: rgba(236, 236, 236, 0.1);
+    backdrop-filter: blur(40px);
+    border-radius: 8px;
+
+    // .rewardsCard__image
+    &__image {
+        background: rgba(236, 236, 236, 0.1);
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 260px;
+
+        & > img {
+            max-width: 100%;
+            flex: 0 1 auto;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+
+        //.rewardsCard__image_locked
+        &_locked {
+            &:before {
+                content: '';
+                position: absolute;
+                top: 12px;
+                left: calc(-50% - 34px);
+                background: url("/App/rewards/lockLine.jpg") repeat-x;
+                height: 48px;
+                width: calc(2 * 416px);
+                rotate: 30deg;
+                transform-origin: center;
+                animation: slide 15s linear infinite;
+            }
+        }
+    }
+
+    // .rewardsCard__info
+    &__info {
+        display: flex;
+        flex-direction: column;
+
+        &:not(:last-child) {
+            @include adaptiv-value("margin-bottom", 24, 20, 1);
+        }
+    }
+
+    // .rewardsCard__title
+    &__title {
+        font-family: 'Integral CF';
+        line-height: 150%;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        @include adaptiv-value("font-size", 18, 16, 1);
+        color: #FFFFFF;
+
+        &:not(:last-child) {
+            @include adaptiv-value("margin-bottom", 16, 12, 1);
+        }
+    }
+
+    //.rewardsCard__requirement
+    &__requirement {
+        color: $mainColor;
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+
+        justify-content: space-between;
+
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    }
+
+    // .rewardsCard__metalock
+    &__metalock {
+
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+        justify-content: space-between;
+
+        font-weight: 700;
+        line-height: 150%;
+        color: #FFFFFF;
+
+        &:not(:last-child) {
+            @include adaptiv-value("margin-bottom", 24, 20, 1);
+        }
+    }
+
+    // .rewardsCard__btn
+    &__btn {
+        width: 100%;
+
+        &:not(:last-child) {
+            @include adaptiv-value("margin-bottom", 24, 20, 1);
+        }
+    }
+
+    //.rewardsCard__expressIn
+    &__expressIn {
+        color: #fff;
+        line-height: 150%;
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+        justify-content: space-between;
+
+        b {
+            display: flex;
+            align-items: center;
+            column-gap: 6px;
+            justify-content: space-between;
+        }
+    }
+
+}

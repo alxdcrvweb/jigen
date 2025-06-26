@@ -1,0 +1,17 @@
+<svg width="347" height="60" viewBox="0 0 347 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="44" cy="30" r="20" fill="#4FC4AE"/>
+<g filter="url(#filter0_b_1014_5716)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14 30C14 13.4315 27.4315 0 44 0C55.3171 0 65.1706 6.26651 70.2799 15.5189C73.845 21.975 79.6682 28 87.0432 28H130.957C138.332 28 144.155 21.975 147.72 15.5189C152.829 6.26651 162.683 0 174 0C185.317 0 195.171 6.26651 200.28 15.5189C203.845 21.975 209.668 28 217.043 28H260.957C268.332 28 274.155 21.975 277.72 15.5189C282.829 6.26651 292.683 0 304 0C320.569 0 334 13.4315 334 30C334 46.5685 320.569 60 304 60C292.683 60 282.829 53.7335 277.72 44.4811C274.155 38.025 268.332 32 260.957 32H217.043C209.668 32 203.845 38.025 200.28 44.4811C195.171 53.7335 185.317 60 174 60C162.683 60 152.829 53.7335 147.72 44.4811C144.155 38.025 138.332 32 130.957 32H87.0432C79.6682 32 73.845 38.025 70.2799 44.4811C65.1706 53.7335 55.3171 60 44 60C27.4315 60 14 46.5685 14 30Z" fill="#ECECEC" fill-opacity="0.1"/>
+</g>
+<circle cx="44" cy="30" r="10" fill="#4FC4AE"/>
+<circle cx="174" cy="30" r="10" fill="#ECECEC" fill-opacity="0.1"/>
+<circle cx="304" cy="30" r="10" fill="#ECECEC" fill-opacity="0.1"/>
+<defs>
+<filter id="filter0_b_1014_5716" x="-66" y="-80" width="480" height="220" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImageFix" stdDeviation="40"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1014_5716"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1014_5716" result="shape"/>
+</filter>
+</defs>
+</svg>

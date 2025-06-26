@@ -1,0 +1,64 @@
+@keyframes linkRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeModal {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeModalReverse {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.5;
+    }
+}
+
+@keyframes scaleBodyModalReverse {
+    from {
+        scale: 1;
+    }
+    to {
+        scale: 0.9;
+    }
+}
+
+
+@keyframes scaleBodyModal {
+    from {
+        scale: 0.9;
+    }
+    to {
+        scale: 1;
+    }
+}
+
+@keyframes slide {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: calc(-2 * 416px);
+
+    }
+}
+
+@keyframes progressSlide {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}

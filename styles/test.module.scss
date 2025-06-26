@@ -1,0 +1,77 @@
+@use "sass:math";
+@import "keyframes";
+@import "mixins";
+@import "variables";
+.main {
+    display: flex;
+    justify-content: center
+}
+.test {
+    @include adaptiv-value("padding-top", 60, 32, 1);
+    @include adaptiv-value("padding-bottom", 145, 64, 1);
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    @include adaptiv-value("row-gap", 40, 24, 1);
+
+    p {
+        line-height: 140%;
+        @include adaptiv-value("font-size", 16, 14, 1);
+
+    }
+
+    // .test__top
+    &__top {
+    }
+
+    // .test__title
+    &__title {
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    }
+
+    // .test__main
+    &__main {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+
+    }
+
+    // .test__subtitle
+    &__subtitle {
+
+        font-family: 'Integral CF';
+        line-height: 160%;
+        color: #ECECEC;
+
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    }
+
+    // .test__text
+    &__text {
+
+    }
+
+    // .test__info
+    &__info {
+        padding: 18px 24px;
+        background: #272727;
+        border-radius: 8px;
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        max-width: 900px;
+    }
+
+    // .test__btn
+    &__btn {
+        width: 311px;
+        @media (max-width: ($md3 + px)) {
+            width: 100%;
+        }
+    }
+}

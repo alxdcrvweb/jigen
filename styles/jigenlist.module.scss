@@ -1,0 +1,633 @@
+@use "sass:math";
+@import "keyframes";
+@import "mixins";
+@import "variables";
+
+.jigenList {
+    width: 100%;
+    overflow: hidden !important;
+    min-height: 100%;
+    display: grid;
+    align-content: start;
+    align-items: start;
+    grid-template-rows: auto 1fr auto;
+    background: url("/jigenListPage/bg.png") top / cover no-repeat;
+}
+
+// ========================================================================================================================================================
+
+.jigenListHeader {
+    //.jigenListHeader__box
+    &__box {
+        display: grid;
+        align-items: center;
+        justify-content: space-between;
+        grid-template-columns: 40px 1fr minmax(40px, auto);
+        padding-top: 32px;
+        @media (max-width: ($md2 + px)) {
+            padding: 20px 0;
+        }
+
+    }
+
+    //.jigenListHeader__back
+    &__back {
+        & > img {
+            rotate: 90deg;
+        }
+    }
+
+    //.jigenListHeader__logo
+    &__logo {
+        cursor: pointer;
+        justify-self: center;
+
+    }
+
+    //.jigenListHeader__status
+    &__status {
+        grid-column: 3/4;
+        justify-self: end;
+        text-transform: none;
+        color: #ECECEC;
+        column-gap: 8px;
+        @media (max-width: ($md2 + px)) {
+            grid-column: 2/3;
+            justify-self: center;
+        }
+    }
+}
+
+.jigenListFooter {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    @media (max-width: ($md3 + px)) {
+        padding: 0 0 20px 0;
+    }
+    // .jigenListFooter__box
+    &__box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 5px;
+    }
+
+    // .jigenListFooter__link
+    &__link {
+        font-family: 'Lexend Deca';
+        font-size: 14px;
+        line-height: 140%;
+        text-decoration-line: underline;
+        color: #878A94;
+    }
+}
+
+//========================================================================================================================================================
+
+
+.jigenListFormLayout {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    // .jigenListFormLayout__steps
+    &__steps {
+        &:not(:last-child) {
+            @include adaptiv-value("margin-bottom", 40, 24, 1);
+        }
+    }
+
+    // .jigenListFormLayout__restart
+    &__restart {
+    }
+}
+
+.steps {
+    margin: 0 auto;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    // .steps__line
+    &__line {
+        padding: 0 14px;
+    }
+
+    // .steps__labels
+    &__labels {
+        width: 100%;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(87px, auto);
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 5px;
+
+        & > span {
+            text-align: center;
+            font-family: 'Integral CF';
+            font-size: 14px;
+            line-height: 160%;
+            color: rgba(255, 255, 255, 0.2);
+
+            &._active {
+                color: #ECECEC;
+            }
+        }
+    }
+
+}
+
+.restart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 5px;
+    // .restart__left
+    &__left {
+    }
+
+    // .restart__title
+    &__title {
+        font-family: 'Integral CF';
+        line-height: 140%;
+        color: #ECECEC;
+
+        &:not(:last-child) {
+            margin-bottom: 4px;
+        }
+    }
+
+    // .restart__text
+    &__text {
+        @include adaptiv-value("font-size", 16, 14, 1);
+        line-height: 140%;
+    }
+
+    // .restart__btn
+    &__btn {
+    }
+}
+
+//========================================================================================================================================================
+
+._box {
+    background: linear-gradient(104.82deg, rgba(255, 255, 255, 0.1) -95.95%, rgba(255, 255, 255, 0) 150.56%);
+    backdrop-filter: blur(40px);
+    border-radius: 8px;
+    @include adaptiv-value("padding", 24, 20, 1);
+    max-width: 400px;
+    width: 100%;
+    overflow: hidden;
+
+    &:not(:last-child) {
+        margin-bottom: 24px;
+    }
+}
+
+.jigenListMain {
+    //overflow: hidden;
+    @include adaptiv-value("padding-top", 64, 24, 1);
+    @include adaptiv-value("padding-bottom", 64, 24, 1);
+    height: 100%;
+    //.jigenListMain__container
+
+    &__container {
+        position: relative;
+        height: 100%;
+        display: grid;
+        justify-items: center;
+        align-items: start;
+    }
+
+
+    //.jigenListMain__decorations
+    &__decorations {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        //.jigenListMain__decorations_desktop
+        &_desktop {
+            @media (max-width: ($md3 + px)) {
+                display: none;
+            }
+        }
+    }
+
+    //.jigenListMain__decorItem
+    &__decorItem {
+        position: absolute;
+        transform-origin: center;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        &_1 {
+            top: -16%;
+            left: -13%;
+            width: 31%;
+            rotate: 30deg;
+            @media (max-width: ($md3 + px)) {
+                //top: -22px;
+                top: auto;
+                bottom: 100%;
+                left: -17%;
+                width: 140px;
+            }
+        }
+
+        &_2 {
+            top: 88%;
+            left: 33%;
+            width: 23.5%;
+            rotate: 13deg;
+
+            @media (max-width: ($md3 + px)) {
+                bottom: 1%;
+                left: -34%;
+                width: 180px;
+                rotate: 31deg;
+
+            }
+        }
+
+        &_3 {
+            right: -18%;
+            top: 7%;
+            width: 24.5%;
+            rotate: -24deg;
+
+            @media (max-width: ($md3 + px)) {
+                right: -32%;
+                top: -8%;
+                width: 200px;
+            }
+        }
+    }
+}
+
+.jigenListFirst {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 360px;
+    width: 100%;
+    //.jigenListFirst__logo
+    &__logo {
+        width: 100%;
+        @media (max-width: ($md3 + px)) {
+            padding: 0 24px;
+        }
+
+        &:not(:last-child) {
+            @include adaptiv-value("margin-bottom", 24, 16, 1);
+        }
+    }
+
+    //.jigenListFirst__text
+    &__text {
+        text-align: center;
+        line-height: 160%;
+        color: #A7A7A7;
+
+        span {
+            font-weight: 600;
+            color: #fff;
+        }
+
+        &:not(:last-child) {
+            @include adaptiv-value("margin-bottom", 32, 20, 1);
+
+        }
+    }
+
+    //.jigenListFirst__btn
+    &__btn {
+    }
+
+}
+
+.jigenListSecond {
+    //.jigenListSecond__title
+    &__title {
+        text-align: center;
+        overflow: hidden;
+
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+
+    }
+
+    //.jigenListSecond__text
+    &__text {
+        text-align: center;
+        line-height: 140%;
+        font-family: "Lato";
+        &:not(:last-child) {
+            @include adaptiv-value("margin-bottom", 32, 24, 1);
+        }
+    }
+
+    //.jigenListSecond__btn
+    &__btn {
+        width: 100%;
+
+        &:not(:last-child) {
+            @include adaptiv-value("margin-bottom", 32, 24, 1);
+        }
+    }
+
+    //.jigenListSecond__info
+    &__info {
+        background: rgba(236, 236, 236, 0.1);
+        border: 1px solid #3B3C3C;
+        border-radius: 8px;
+        padding: 12px;
+        font-family: "Lato";
+        font-size: 12px;
+        line-height: 160%;
+        color: #A7A7A7;
+
+        & > b {
+            font-weight: 700;
+            color: #fff;
+        }
+
+        display: grid;
+        align-items: start;
+        column-gap: 8px;
+        grid-template-columns: 16px 1fr;
+    }
+
+    //.jigenListSecond__icon
+    &__icon {
+        margin-top: 3px;
+
+    }
+}
+
+.jigenListThird {
+    //.jigenListThird__btn
+    &__btn {
+        width: 100%;
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+
+}
+
+.jigenListFour {
+    //.jigenListFour__step
+    &__step {
+        padding: 7px 20px;
+
+        background: rgba(236, 236, 236, 0.1);
+        backdrop-filter: blur(40px);
+        border-radius: 100px;
+
+        line-height: 150%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #ECECEC;
+        margin: 0 auto;
+        width: max-content;
+
+        &:not(:last-child) {
+            margin-bottom: 12px;
+        }
+    }
+
+    //.jigenListFour__title
+    &__title {
+        text-align: center;
+
+        &:not(:last-child) {
+            @include adaptiv-value("margin-bottom", 20, 12, 1);
+        }
+    }
+
+    //.jigenListFour__form
+    &__form {
+        padding: 16px;
+        background: rgba(236, 236, 236, 0.1);
+        border-radius: 8px;
+
+    }
+
+    //.jigenListFour__textarea
+    &__textarea {
+        resize: none;
+        background: none;
+        width: 100%;
+        height: 135px;
+        color: #fff;
+
+        &:active,
+        &:focus {
+            outline: none;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: ($md3 + px)) {
+            height: 220px;
+        }
+    }
+
+    //.jigenListFour__footer
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 5px;
+    }
+
+    //.jigenListFour__count
+    &__count {
+        font-size: 14px;
+        line-height: 140%;
+    }
+
+    //.jigenListFour__send
+    &__send {
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+        font-weight: 700;
+        line-height: 140%;
+        color: #FFFFFF;
+
+        & > img {
+            flex: 0 0 16px;
+        }
+    }
+
+    //.jigenListFour__btns
+    &__btns {
+        padding-top: 12px;
+        column-gap: 12px;
+        display: flex;
+
+        &:not(:last-child) {
+            @include adaptiv-value("margin-bottom", 32, 24, 1);
+        }
+    }
+
+    //.jigenListFour__btn
+    &__btn {
+        flex: 1 1 50%;
+        width: 100%;
+        //width: auto;
+    }
+
+    //.jigenListFour__back
+    &__back {
+        padding-left: 11px !important;
+        padding-right: 20px !important;
+
+        & > img {
+            rotate: 90deg;
+        }
+    }
+
+}
+
+.jigenListFive {
+    @media (min-width: ($md3 + px)) {
+        align-self: center;
+        margin-bottom: 34px;
+
+    }
+    //.jigenListFive__title
+    &__title {
+
+        text-align: center;
+
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    }
+
+    //.jigenListFive__text
+    &__text {
+        text-align: center;
+
+        &:not(:last-child) {
+            @include adaptiv-value("margin-bottom", 32, 22, 1);
+        }
+    }
+
+    //.jigenListFive__connect
+    &__connect {
+        width: 100%;
+
+        &:not(:last-child) {
+            @include adaptiv-value("margin-bottom", 32, 25, 1);
+        }
+    }
+    //.jigenListFive__mint
+    &__mint {
+        width: 100%;
+        margin-bottom: 20px;
+        &:not(:last-child) {
+            @include adaptiv-value("margin-bottom", 32, 25, 1);
+        }
+    }
+    //.jigenListFive__status
+    &__status {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        @media (max-width: ($md3 + px)) {
+            flex-direction: column;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    //.jigenListFive__value
+    &__value {
+        border-radius: 8px;
+        padding: 11px 16px;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 16px auto;
+        column-gap: 8px;
+        color: #A7A7A7;
+        font-family: 'Integral CF';
+        line-height: 160%;
+        background: linear-gradient(104.82deg, rgba(255, 255, 255, 0.1) -95.95%, rgba(255, 255, 255, 0) 150.56%);
+        //.jigenListFive__value_approved
+        &_approved {
+            background: rgba(164, 255, 108, 0.1);
+            color: #A4FF6C;
+        }
+
+        //.jigenListFive__value_pending
+        &_pending {
+            background: rgba(255, 214, 108, 0.1);
+            color: #FFD66C;
+        }
+
+        //.jigenListFive__value_denied
+        &_denied {
+            background: rgba(255, 97, 97, 0.1);
+            color: #FF6161;
+        }
+    }
+
+    //.jigenListFive__balance
+    &__balance {
+        background: rgba(236, 236, 236, 0.1);
+        border-radius: 8px;
+        padding: 13px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media (max-width: ($md3)) {
+            padding: 13px;
+        }
+
+        line-height: 140%;
+        color: #ECECEC;
+
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+    }
+
+
+    //.jigenListFive__amount
+    &__amount {
+
+        font-family: 'Integral CF';
+        font-size: 20px;
+        line-height: 140%;
+        color: #ECECEC;
+    }
+
+    //.jigenListFive__refresh
+    &__refresh {
+        font-family: 'Integral CF';
+        @include adaptiv-value("font-size", 20, 18, 1);
+        line-height: 160%;
+        text-decoration-line: underline;
+        color: #ECECEC;
+        text-align: center;
+        display: flex;
+        margin: 0 auto;
+    }
+}

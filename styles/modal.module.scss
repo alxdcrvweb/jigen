@@ -1,0 +1,233 @@
+@use "sass:math";
+@import "keyframes";
+@import "mixins";
+@import "variables";
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(15, 18, 21, 0.7);
+    animation: fadeModal 0.3s 1 ease-in-out;
+
+    //.modal_hide
+    &_hide {
+        animation: fadeModalReverse 0.3s 1 ease-in-out;
+
+        .modal__body {
+            animation: scaleBodyModalReverse 0.3s 1 ease-in-out;
+        }
+    }
+
+    //.modal__body
+    &__body {
+        animation: scaleBodyModal 0.3s 1 ease-in-out;
+
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        translate: 0px -50%;
+        left: 20px;
+        right: 20px;
+
+        max-width: 559px;
+        min-height: 300px;
+        max-height: calc(100vh - 100px);
+        height: max-content;
+        @include adaptiv-value("padding", 24, 20, 1);
+
+
+        background: rgba(236, 236, 236, 0.1);
+        backdrop-filter: blur(150px);
+        border-radius: 8px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        overflow-x: hidden;
+
+        margin: 0 auto;
+    }
+
+    //.modal__close
+    &__close {
+        cursor: pointer;
+        top: 70px;
+        right: 120px;
+        @media (max-width: ($md3)) {
+            top: 30px;
+            right: 16px;
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+.orderModal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__button {
+        width: 280px;
+    }
+    &__image {
+        background: rgba(236, 236, 236, 0.1);
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 260px;
+        width: 280px;
+        & > img {
+            max-width: 100%;
+            flex: 0 1 auto;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+
+        //.rewardsCard__image_locked
+        &_locked {
+            &:before {
+                content: '';
+                position: absolute;
+                top: 12px;
+                left: calc(-50% - 34px);
+                background: url("/App/rewards/lockLine.jpg") repeat-x;
+                height: 48px;
+                width: calc(2 * 416px);
+                rotate: 30deg;
+                transform-origin: center;
+                animation: slide 15s linear infinite;
+            }
+        }
+    }
+    & > h1 {
+        text-align: center;
+        padding: 14px;
+        padding-top: 0px;
+    }
+    & > p {
+        text-align: center;
+        padding: 20px;
+        padding-top: 0px;
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+    }
+}
+.metalockModal {
+
+    font-family: 'Integral CF';
+    color: #FFFFFF;
+    // .metalockModal__header
+    &__header {
+        display: grid;
+        column-gap: 12px;
+        grid-template-columns: 1fr 32px;
+
+        &:not(:last-child) {
+            margin-bottom: 24px;
+            @media (max-width: ($md3 +px)) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    &__loading {
+        width:100%;
+        height: 100%;
+        min-height: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & > img {
+            height: 55px;
+            width: 55px;
+            object-fit: contain;
+        }
+    }
+    // .metalockModal__title
+    &__title {
+        line-height: 160%;
+        @include adaptiv-value("font-size", 24, 20, 1);
+
+    }
+
+    &__close {
+        width: 32px;
+        height: 32px;
+        overflow: hidden;
+        border: none !important;
+
+        & > img {
+            flex: 0 0 14px;
+        }
+
+        &:before {
+            backdrop-filter: blur(0px);
+        }
+    }
+
+    // .metalockModal__main
+    &__main {
+
+        border-top: 1px solid rgba(236, 236, 236, 0.1);
+        border-bottom: 1px solid rgba(236, 236, 236, 0.1);
+        padding: 24px 0;
+        @media (max-width: ($md3 + px)) {
+            padding: 20px 0;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 24px;
+            @media (max-width: ($md3 +px)) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    // .metalockModal__label
+    &__label {
+        line-height: 160%;
+
+        &:not(:last-child) {
+            @include adaptiv-value("margin-bottom", 12, 8, 1);
+        }
+    }
+
+    // .metalockModal__text
+    &__text {
+        font-family: "Lato";
+        @include adaptiv-value("font-size", 16, 14, 1);
+        line-height: 140%;
+        color: #A7A7A7;
+
+        & > p > a {
+            font-family: 'Integral CF';
+            color: #fff;
+            text-decoration: underline;
+            margin-left: 5px;
+        }
+    }
+
+    // .metalockModal__footer
+    &__footer {
+    }
+
+    // .metalockModal__checkbox
+    &__checkbox {
+        &:not(:last-child) {
+            margin-bottom: 24px;
+            @media (max-width: ($md3 + px)) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    //.metalockModal__btn
+    &__btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,45 @@
+// @font-face {
+// 	font-family: "CODE_PRO_LC";
+// 	font-display: swap;
+// 	src: url("/fonts/CODE_PRO_LC/CODE_PRO_LC.woff2") format("woff2"),
+// 		url("/fonts/CODE_PRO_LC/CODE_PRO_LC.woff") format("woff");
+// 	font-weight: 400;
+// 	font-style: normal;
+// }
+
+@font-face {
+	font-family: "Integral CF";
+	font-display: block;
+	src: url("/fonts/IntegralCF-Regular.woff2") format("woff2"), url("/fonts/IntegralCF-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Integral CF";
+	font-display: block;
+	src: url("/fonts/IntegralCF-Medium.woff2") format("woff2"), url("/fonts/IntegralCF-Medium.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 400;
+	font-display: block;
+	src: url("/fonts/Lato-Regular.woff2") format('woff2'), url("/fonts/Lato-Regular.woff") format("woff");
+  }
+@font-face {
+	font-family: "Lexend Deca";
+	font-style: normal;
+	font-weight: 400;
+	font-display: block;
+	src: url("/fonts/LexendDeca-Light.woff2") format('woff2'), url("/fonts/LexendDeca-Light.woff") format("woff");
+}
+@font-face {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 400;
+	font-display: block;
+	src: url("/fonts/Inter-Regular.woff2") format('woff2'), url("/fonts/Inter-Regular.woff") format("woff");
+}

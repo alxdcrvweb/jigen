@@ -1,0 +1,73 @@
+@use "sass:math";
+@import "keyframes";
+@import "mixins";
+@import "variables";
+
+.container {
+    position: relative;
+    max-height: 600px;
+    //max-width: 600px;
+    overflow-x: scroll;
+    background: #0F1215;
+    color: #fff;
+    border-radius: 10px;
+}
+
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    color: var(--white);
+
+    thead tr th {
+        text-align: left;
+
+        font-size: 15px;
+        line-height: 130%;
+        color: #8798C2;
+    }
+
+    td, th {
+        white-space: nowrap;
+        padding: 10px 12px;
+    }
+
+    tbody {
+        tr {
+            overflow: hidden;
+            border: none;
+
+            &:nth-child(odd) {
+                background: #111B28;
+            }
+
+            td {
+                min-height: 56px;
+                vertical-align: middle;
+                line-height: 130%;
+
+                a {
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    & * > {
+                        flex: 0 0 32px;
+                    }
+                }
+
+                &:first-child {
+                    border-radius: 6px 0 0 6px;
+                }
+
+                &:last-child {
+                    border-radius: 0 6px 6px 0;
+                }
+            }
+        }
+    }
+}

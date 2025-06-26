@@ -1,0 +1,234 @@
+@use "sass:math";
+@import "keyframes";
+@import "mixins";
+@import "variables";
+
+
+.metalock {
+    @include adaptiv-value("padding-top", 40, 32, 1);
+    padding-bottom: 50px;
+    // .metalock__content
+    &__content {
+    }
+
+    // .metalock__header
+    &__header {
+        //@include adaptiv-value("padding-top", 40, 32, 1);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+
+        &:not(:last-child) {
+            @include adaptiv-value("margin-bottom", 40, 24, 1);
+        }
+
+        @media (min-width: ($md3 + px)) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    // .metalock__title
+    &__title {
+    }
+
+    // .metalock__tooltip
+    &__tooltip {
+        @media (max-width: ($md3 + px)) {
+            padding: 12px;
+            border: 1px solid rgba(236, 236, 236, 0.1);
+            border-radius: 8px;
+        }
+    }
+
+    // .metalock__main
+    &__main {
+        position: relative;
+    }
+
+    // .metalock__body
+    &__body {
+        display: grid;
+        justify-content: center;
+        gap: 32px;
+        grid-template-columns: repeat(auto-fill, 312px);
+        @media (max-width: ($md3 + px)) {
+            grid-template-columns: 320px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 40px;
+
+            @media (max-width: ($md3 + px)) {
+                margin-bottom: 64px;
+            }
+        }
+    }
+
+    //.metalock__count
+    &__count {
+        position: sticky;
+        left: 0;
+        div {
+            display: flex;
+            align-items: center;
+            margin-top:5px
+        }
+        span {
+            margin-right: 10px
+        }
+        @include adaptiv-value("bottom", 32, 16, 1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        @include adaptiv-value("column-gap", 32, 16, 1);
+
+
+        @include adaptiv-value("padding", 16, 20, 1);
+        background: rgba(236, 236, 236, 0.1);
+        backdrop-filter: blur(40px);
+        border-radius: 5px;
+
+        font-family: 'Integral CF';
+        line-height: 160%;
+        color: #ECECEC;
+        @include adaptiv-value("font-size", 16, 14, 1);
+    }
+
+    //.metalock__lock
+    &__lock {
+        flex: 0 0 auto;
+        font-family: 'Integral CF';
+        line-height: 160%;
+
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #010101;
+
+        background: #4FC4AE;
+        border-radius: 39px;
+        padding: 5px 32px;
+        min-height: 48px;
+    }
+
+}
+
+.metalockCard {
+    width: 100%;
+    padding: 16px;
+    height: 400px;
+    background: rgba(236, 236, 236, 0.1);
+    backdrop-filter: blur(40px);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    // .metalockCard__image
+    &__image {
+        width: 100%;
+        
+        border-radius: 4px;
+        margin: 0 auto;
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+        img {
+            width: 100%;
+            max-height: 240px;
+        }
+    }
+
+    // .metalockCard__info
+    &__info {
+        flex: 1 1 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 10px;
+
+        &:not(:last-child) {
+            @include adaptiv-value("margin-bottom", 24, 20, 1);
+        }
+    }
+
+    // .metalockCard__title
+    &__title {
+        color: #fff;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    //.metalockCard__labels
+    &__labels {
+        display: flex;
+        white-space: nowrap;
+        flex-wrap: nowrap;
+        gap: 4px;
+    }
+
+    // .metalockCard__label
+    &__label {
+        padding: 5px 12px;
+
+
+        font-family: 'Integral CF';
+        font-size: 14px;
+        line-height: 160%;
+        color: #ECECEC;
+
+        display: grid;
+        column-gap: 5px;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: 14px auto;
+
+        background: rgba(236, 236, 236, 0.1);
+        border-radius: 100px;
+        //.metalockCard__label_timer
+        &_timer {
+            @media (max-width: ($md3 + px)) {
+                position: absolute;
+                top: 26px;
+                right: 26px;
+                left: 26px;
+                width: max-content;
+                max-width: calc(100% - 52px);
+                margin-left: auto;
+            }
+        }
+
+        //.metalockCard__label_locked
+        &_locked {
+
+            color: #4FC4AE;
+            background: rgba(79, 196, 174, 0.1);
+
+            svg {
+                fill: #4FC4AE;
+            }
+        }
+
+        //.metalockCard__label_notLocked
+        &_notLocked {
+
+            color: #C44F4F;
+            background: rgba(196, 79, 79, 0.1);
+
+            svg {
+                fill: #C44F4F;
+            }
+        }
+    }
+
+    // .metalockCard__btn
+    &__btn {
+        width: 100%;
+        column-gap: 10px;
+    }
+}
