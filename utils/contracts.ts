@@ -2535,7 +2535,7 @@ export const contractsData: ContractsDataType = {
   },
 };
 
-export const jigenNftAbi = !isServer ? contractsData[process.env.NEXT_PUBLIC_STATUS as ContractsStatusKeys] .jigenNft.abi : "";
+export const jigenNftAbi = !isServer ? contractsData[process.env.NEXT_PUBLIC_STATUS as ContractsStatusKeys].jigenNft.abi : "";
 export const jigenNftAddress = !isServer ? contractsData[process.env.NEXT_PUBLIC_STATUS as ContractsStatusKeys].jigenNft.address : "";
 export const mintAddress = !isServer ? contractsData[process.env.NEXT_PUBLIC_STATUS as ContractsStatusKeys].mint.address : "";
 export const mintAbi = !isServer ? contractsData[process.env.NEXT_PUBLIC_STATUS as ContractsStatusKeys].mint.abi : [];

@@ -11,7 +11,7 @@ import type { Contract } from 'web3-eth-contract';
 import Web3Modal from 'web3modal';
 import request, { clearAuthToken, clearAuthTokenTTL, getAuthToken, getAuthTokenTTL, setAuthToken, setAuthTokenTTL } from '../service';
 import { INFURA_ID, NETWORKS, networks, NetworksEnumKeys, StatusKeys } from '../utils/config';
-import { erc20BscAbi, erc20BscAddress, erc20EthAbi, erc20EthAddress, jigenNftAbi, jigenNftAddress, mintAbi, mintAddress } from '../utils/contracts';
+import { erc20BscAbi, erc20BscAddress, erc20EthAbi, erc20EthAddress, mintAbi, mintAddress } from '../utils/contracts';
 import { isAuth, isServer, toHex } from '../utils/utilities';
 import { RootStore } from './RootStore';
 import jwtDecode from 'jwt-decode';
