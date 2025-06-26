@@ -2535,11 +2535,11 @@ export const contractsData: ContractsDataType = {
   },
 };
 
-export const jigenNftAbi = !isServer ? contractsData[process.env.NEXT_PUBLIC_STATUS as ContractsStatusKeys].jigenNft.abi : "";
-export const jigenNftAddress = !isServer ? contractsData[process.env.NEXT_PUBLIC_STATUS as ContractsStatusKeys].jigenNft.address : "";
-export const mintAddress = !isServer ? contractsData[process.env.NEXT_PUBLIC_STATUS as ContractsStatusKeys].mint.address : "";
-export const mintAbi = !isServer ? contractsData[process.env.NEXT_PUBLIC_STATUS as ContractsStatusKeys].mint.abi : [];
-export const erc20EthAddress = !isServer ? contractsData[process.env.NEXT_PUBLIC_STATUS as ContractsStatusKeys].erc20Eth.address : "";
-export const erc20EthAbi = !isServer ? contractsData[process.env.NEXT_PUBLIC_STATUS as ContractsStatusKeys].erc20Eth.abi : [];
-export const erc20BscAddress = !isServer ? contractsData[process.env.NEXT_PUBLIC_STATUS as ContractsStatusKeys].erc20Bsc.address : "";
-export const erc20BscAbi = !isServer ? contractsData[process.env.NEXT_PUBLIC_STATUS as ContractsStatusKeys].erc20Bsc.abi : [];
+export const jigenNftAbi = !isServer ? contractsData.DEV.jigenNft.abi : "";
+export const jigenNftAddress = !isServer ? contractsData.DEV.jigenNft.address : "";
+export const mintAddress = !isServer ? contractsData.DEV.mint.address : "";
+export const mintAbi = !isServer ? contractsData.DEV.mint.abi : [];
+export const erc20EthAddress = !isServer ? contractsData.DEV.erc20Eth.address : "";
+export const erc20EthAbi = !isServer ? contractsData.DEV.erc20Eth.abi : [];
+export const erc20BscAddress = !isServer ? contractsData.DEV.erc20Bsc.address : "";
+export const erc20BscAbi = !isServer ? contractsData.DEV.erc20Bsc.abi : [];
